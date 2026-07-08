@@ -1,16 +1,14 @@
 package main
 
 import (
-	"fmt"
+	"github.com/Moritisimor/SaturnJS/io"
 	"github.com/dop251/goja"
 )
 
 func main() {
 	js := goja.New()
-	js.Set("io", map[string]any{
-		"println": fmt.Println,
-		"print": fmt.Print,
-	})
+	io.RegisterFuncs(js)
 
 	js.RunString("io.println('Hello from JavaScript!')")
+	js.RunString("io.println(io.input('Enter something: '))")
 }
