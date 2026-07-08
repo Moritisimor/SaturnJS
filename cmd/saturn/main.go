@@ -7,6 +7,10 @@ import (
 
 func main() {
 	js := goja.New()
-	js.Set("println", fmt.Println)
-	js.RunString("println('Hello from JavaScript!')")
+	js.Set("io", map[string]any{
+		"println": fmt.Println,
+		"print": fmt.Print,
+	})
+
+	js.RunString("io.println('Hello from JavaScript!')")
 }
