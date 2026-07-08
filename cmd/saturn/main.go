@@ -11,6 +11,11 @@ import (
 )
 
 func main() {
+	if len(os.Args) < 2 {
+		fmt.Printf("REPL mode not implemented yet!\n")
+		os.Exit(1)
+	}
+
 	js := goja.New()
 	if err := iolib.RegisterFuncs(js); err != nil {
 		fmt.Printf("Error while registering 'io'-related functions: %s\n", err.Error())
@@ -27,7 +32,16 @@ func main() {
 		os.Exit(1)
 	}
 
-	js.RunString("io.println('Hello from JavaScript!')")
-	js.RunString("io.println(fs.readFile(io.input('Enter file you want to read: ')))")
-	js.RunString("io.println(`Using shell: ${os.getEnv('SHELL')}`)")
+	scriptPath := os.Args[1]
+	content, err := os.ReadFile(scriptPath)
+	if err != nil {
+		fmt.Printf("Error while reading '%s': %s\n", scriptPath, err.Error())
+		os.Exit(1)
+	}
+
+	script := string(content)
+	if _, err := js.RunString(script); err != nil {
+		fmt.Printf("Error while executing script: %s\n", err.Error())
+		os.Exit(1)
+	}
 }

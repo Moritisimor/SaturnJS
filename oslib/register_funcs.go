@@ -10,6 +10,7 @@ func RegisterFuncs(js *goja.Runtime) error {
 	if err := js.Set("os", map[string]any{
 		"getEnv": os.Getenv,
 		"setEnv": os.Setenv,
+		"getArgs": getArgs,
 	}); err != nil {
 		return err
 	}
