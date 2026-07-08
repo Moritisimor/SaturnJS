@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/Moritisimor/SaturnJS/colorslib"
 	"github.com/Moritisimor/SaturnJS/fslib"
 	"github.com/Moritisimor/SaturnJS/iolib"
 	"github.com/Moritisimor/SaturnJS/oslib"
@@ -29,6 +30,11 @@ func main() {
 
 	if err := oslib.RegisterFuncs(js); err != nil {
 		fmt.Printf("Error while registering 'os'-related functions: %s\n", err.Error())
+		os.Exit(1)
+	}
+
+	if err := colorslib.RegisterFuncs(js); err != nil {
+		fmt.Printf("Error while registering 'color'-related functions: %s\n", err.Error())
 		os.Exit(1)
 	}
 

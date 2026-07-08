@@ -2,7 +2,10 @@ module github.com/Moritisimor/SaturnJS
 
 go 1.26.4
 
-require github.com/dop251/goja v0.0.0-20260701091749-b07b74453ea9
+require (
+	github.com/Moritisimor/EpsilonFetch v1.1.1
+	github.com/dop251/goja v0.0.0-20260701091749-b07b74453ea9
+)
 
 require (
 	github.com/dlclark/regexp2/v2 v2.2.1 // indirect
