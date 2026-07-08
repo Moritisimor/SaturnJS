@@ -11,6 +11,7 @@ func RegisterFuncs(js *goja.Runtime) error {
 		"readFile": readFile,
 		"readFileLines": readFileLines,
 		"readFileBytes": os.ReadFile,
+		"readDir": readDir,
 	}); err != nil {
 		return err
 	}
