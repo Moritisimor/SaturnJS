@@ -11,6 +11,7 @@ func RegisterFuncs(js *goja.Runtime) error {
 		"getEnv": os.Getenv,
 		"setEnv": os.Setenv,
 		"getArgs": getArgs,
+		"exit": os.Exit,
 	}); err != nil {
 		return err
 	}
