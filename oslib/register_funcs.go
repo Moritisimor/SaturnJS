@@ -8,6 +8,8 @@ import (
 
 func RegisterFuncs(js *goja.Runtime) error {
 	return js.Set("os", map[string]any{
+		"cwd": os.Getwd,
+		"chdir": os.Chdir,
 		"getEnv": os.Getenv,
 		"setEnv": os.Setenv,
 		"getArgs": getArgs,
