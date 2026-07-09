@@ -7,14 +7,10 @@ import (
 )
 
 func RegisterFuncs(js *goja.Runtime) error {
-	if err := js.Set("fs", map[string]any{
+	return js.Set("fs", map[string]any{
 		"readFile": readFile,
 		"readFileLines": readFileLines,
 		"readFileBytes": os.ReadFile,
 		"readDir": readDir,
-	}); err != nil {
-		return err
-	}
-
-	return nil
+	})
 }

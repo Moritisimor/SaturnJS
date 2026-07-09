@@ -7,13 +7,9 @@ import (
 )
 
 func RegisterFuncs(js *goja.Runtime) error {
-	if err := js.Set("io", map[string]any{
+	return js.Set("io", map[string]any{
 		"print": fmt.Print,
 		"println": fmt.Println,
 		"input": input,
-	}); err != nil {
-		return err
-	}
-
-	return nil
+	})
 }

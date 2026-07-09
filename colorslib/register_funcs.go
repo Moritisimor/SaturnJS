@@ -6,7 +6,7 @@ import (
 )
 
 func RegisterFuncs(js *goja.Runtime) error {
-	if err := js.Set("color", map[string]any{
+	return js.Set("color", map[string]any{
 		"redify": color.SprintRed,
 		"greenify": color.SprintGreen,
 		"blueify": color.SprintBlue,
@@ -14,9 +14,5 @@ func RegisterFuncs(js *goja.Runtime) error {
 		"blackify": color.SprintBlack,
 		"cyanify": color.SprintCyan,
 		"magentaify": color.SprintMagenta,
-	}); err != nil {
-		return err
-	}
-
-	return nil
+	})
 }
