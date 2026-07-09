@@ -47,6 +47,7 @@ func RunRepl(js *goja.Runtime) error {
 			continue
 		}
 
+		fmt.Print(color.SprintCyan("Evaluates to: "))
 		fmt.Println(val)
 	}
 
