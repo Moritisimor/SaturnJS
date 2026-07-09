@@ -28,6 +28,7 @@ func httpGet(url string) (map[string]any, error) {
 	response["body"] = string(body)
 	response["status"] = res.StatusCode
 	response["headers"] = headers
+	response["getHeader"] = res.Header.Get
 	response["ip"] = res.Request.RemoteAddr
 
 	return response, nil
