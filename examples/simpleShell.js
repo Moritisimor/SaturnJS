@@ -11,7 +11,9 @@ while (true) {
 
     const parts = userInput.split(" ");
     const programName = parts[0];
-    const programArgs = parts.slice(1, parts.length - 1);
+    const programArgs = parts.slice(1, parts.length);
+    io.println(programName);
+    io.println(programArgs);
 
     try {
         exec.execute(programName, programArgs);
