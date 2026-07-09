@@ -10,6 +10,7 @@ func RegisterFuncs(js *goja.Runtime) error {
 	return js.Set("io", map[string]any{
 		"print": fmt.Print,
 		"println": fmt.Println,
+		"printf": fmt.Printf,
 		"input": input,
 	})
 }
