@@ -12,5 +12,7 @@ func RegisterFuncs(js *goja.Runtime) error {
 		"readFileLines": readFileLines,
 		"readFileBytes": os.ReadFile,
 		"readDir": readDir,
+		"readJsonObject": readJsonObject,
+		"readJsonArray": readJsonArray,
 	})
 }

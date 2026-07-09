@@ -25,6 +25,6 @@ func main() {
 	}
 
 	if err := internal.RunScript(js, os.Args[1]); err != nil {
-		fmt.Println()
+		fmt.Println(err.Error())
 	}
 }

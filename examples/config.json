@@ -1,0 +1,16 @@
+{
+    "port": 8080,
+    "host": "0.0.0.0",
+    "db_port": 3306,
+    "db_host": "127.0.0.1",
+    "db_user": "admin123",
+    "db_password": "password123",
+    "database": "ProductsDB",
+    "blacklisted_ips": [
+        "192.168.1.10",
+        "192.168.1.100",
+        "192.168.1.255",
+        "192.168.2.20",
+        "192.168.2.255"
+    ]
+}
