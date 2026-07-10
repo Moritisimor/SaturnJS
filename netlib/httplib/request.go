@@ -42,6 +42,7 @@ func Request(
 
 	return map[string]any{
 		"body":      string(resBody),
+		"bodyBytes": resBody,
 		"status":    res.StatusCode,
 		"headers":   resHeaders,
 		"getHeader": res.Header.Get,

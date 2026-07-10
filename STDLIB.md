@@ -272,6 +272,7 @@ Note that the `headers` object must only have keys where the value is a string.
 
 ##### Object Fields
 - body: string
+- bodyBytes: int array
 - status: int
 - headers: string array array
 - getHeader: (key: string) => string
@@ -287,6 +288,7 @@ Primarily meant for simple, header- and bodyless GET requests, like downloads.
 
 ##### Object Fields
 - body: string
+- bodyBytes: int array
 - status: int
 - headers: string array array
 - getHeader: (key: string) => string
@@ -304,9 +306,8 @@ Note that the `headers` object must only have keys where the value is a string.
 
 ##### Object Fields
 - body: string
+- bodyBytes: int array
 - status: int
 - headers: string array array
 - getHeader: (key: string) => string
 - ip: string
-
-
