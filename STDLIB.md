@@ -180,3 +180,50 @@ Spawns a process, waiting for it to finish. Returns the process exit code.
 
 #### signature
 exec.execute(programName: string, programArgs: string array): integer
+
+## color
+Collection of functions for coloring strings via ANSI Escape Codes.
+
+None of the functions throw.
+
+### redify
+Turns a string red.
+
+#### Signature
+`color.redify(x: string): string`
+
+### blueify
+Turns a string blue.
+
+#### Signature
+`color.blueify(x: string): string`
+
+### greenify
+Turns a string green.
+
+#### Signature
+`color.greenify(x: string): string`
+
+### yellowify
+Turns a string yellow.
+
+#### Signature
+`color.yelllowify(x: string): string`
+
+### blackify
+Turns a string black.
+
+#### Signature
+`color.blackify(x: string): string`
+
+### magentaify
+Turns a string magenta.
+
+#### Signature
+`color.magentaify(x: string): string`
+
+### cyanify
+Turns a string cyan.
+
+#### Signature
+`color.cyanify(x: string): string`
