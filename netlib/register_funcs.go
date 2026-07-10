@@ -8,8 +8,8 @@ import (
 func RegisterFuncs(js *goja.Runtime) error {
 	return js.Set("net", map[string]any{
 		"http": map[string]any{
-			"get": httplib.Get,
-			"post": httplib.Post,
+			"get":     httplib.Get,
+			"post":    httplib.Post,
 			"request": httplib.Request,
 		},
 

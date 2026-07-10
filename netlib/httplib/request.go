@@ -8,9 +8,9 @@ import (
 )
 
 func Request(
-	serverUrl string, 
+	serverUrl string,
 	method string,
-	body string, 
+	body string,
 	headers map[string]string,
 ) (map[string]any, error) {
 	req, err := http.NewRequest(method, serverUrl, bytes.NewBuffer([]byte(body)))
@@ -37,10 +37,10 @@ func Request(
 	}
 
 	return map[string]any{
-		"body": string(resBody),
-		"status": res.StatusCode,
-		"headers": resHeaders,
+		"body":      string(resBody),
+		"status":    res.StatusCode,
+		"headers":   resHeaders,
 		"getHeader": res.Header.Get,
-		"ip": res.Request.RemoteAddr,
+		"ip":        res.Request.RemoteAddr,
 	}, nil
 }

@@ -35,7 +35,7 @@ func StdlibSetup(js *goja.Runtime) error {
 
 	if err := execlib.RegisterFuncs(js); err != nil {
 		return fmt.Errorf("Error while registering 'exec'-related functions. %s\n", err.Error())
-		
+
 	}
 
 	return nil

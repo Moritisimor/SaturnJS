@@ -12,7 +12,7 @@ import (
 
 func RunRepl(js *goja.Runtime) error {
 	editor, err := readline.New(fmt.Sprintf(
-		"🪐 %s %s %s ", 
+		"🪐 %s %s %s ",
 		color.SprintGreen("SaturnJS"),
 		color.SprintBlue("REPL"),
 		color.SprintMagenta(">>"),

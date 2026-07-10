@@ -1,8 +1,8 @@
 package httplib
 
 func Post(
-	url string, 
-	body string, 
+	url string,
+	body string,
 	headers map[string]string,
 	contentType string,
 ) (map[string]any, error) {
