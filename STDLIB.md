@@ -13,11 +13,11 @@ Throws if directory does not exist.
 `fs.readDir(path: string): object array`
 
 ##### Object Fields
-name: string
-size: int 
-isDir: () => bool
-isFile: () => bool
-modificationUnix: int
+- name: string
+- size: int 
+- isDir: () => bool
+- isFile: () => bool
+- modificationUnix: int
 
 ### readFile
 Reads file to a string.
