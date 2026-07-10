@@ -1,6 +1,33 @@
 # SaturnJS Standard Library 
 This Markdown document serves as documentation for the standard library.
 
+## io
+Collection of functions for Input and Output via stdin and stdout.
+
+### print
+Prints to stdout without newline.
+
+#### Signature
+`io.print(a: variadic any): undefined`
+
+### println
+Prints to stdout with newline.
+
+#### Signature
+`io.println(a: variadic any): undefined`
+
+### printf
+Prints to stdout without newline according to format string and format arguments.
+
+#### Signature
+`io.printf(formatString: string, args: variadic any): undefined`
+
+### input
+Prints prompt to stdout without newline and reads a line from stdin, returning it as a string.
+
+#### Signature
+`io.input(prompt: string): string`
+
 ## fs
 Collection of functions for interacting with the OS's filesystem.
 
@@ -279,3 +306,5 @@ Note that the `headers` object must only have keys where the value is a string.
 - headers: string array array
 - getHeader: (key: string) => string
 - ip: string
+
+
