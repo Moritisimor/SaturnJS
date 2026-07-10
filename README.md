@@ -8,6 +8,11 @@ Unlike most other JS runtimes, SaturnJS is intended to be used for scripts that 
 
 It is still in development, and although the API is not supposed to break, it will be extended upon.
 
+## Contributing
+Contributions are always more than welcome. 
+
+If you find any issues or have suggestions, feel free to send a Pull Request or post a GitHub issue!
+
 ## Cloning & Compilation
 ### Prerequisites
 - Latest [Go](https://go.dev) Compiler
