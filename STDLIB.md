@@ -227,3 +227,55 @@ Turns a string cyan.
 
 #### Signature
 `color.cyanify(x: string): string`
+
+## net.http
+Functions for networking via the HyperText Transfer Protocol.
+
+### request
+Sends a HTTP Request.
+
+May throw for several reasons, like no server running on that address.
+
+#### Signature
+`net.http.request(url: string, method: string, body: string, headers: object): object`
+
+Note that the `headers` object must only have keys where the value is a string.
+
+##### Object Fields
+- body: string
+- status: int
+- headers: string array array
+- getHeader: (key: string) => string
+- ip: string
+
+### get
+Comfortable convenience function wrapping `request`. 
+
+Primarily meant for simple, header- and bodyless GET requests, like downloads.
+
+#### Signature
+`net.http.get(url: string): object`
+
+##### Object Fields
+- body: string
+- status: int
+- headers: string array array
+- getHeader: (key: string) => string
+- ip: string
+
+### post
+Convenience function wrapping `request`.
+
+Primarily meant for simple POST requests.
+
+#### Signature
+`net.http.post(url: string, body: string, headers: object, contentType: string): object`
+
+Note that the `headers` object must only have keys where the value is a string.
+
+##### Object Fields
+- body: string
+- status: int
+- headers: string array array
+- getHeader: (key: string) => string
+- ip: string

@@ -18,6 +18,10 @@ func Request(
 		return map[string]any{}, err
 	}
 
+	for k, v := range headers {
+		req.Header.Add(k, v)
+	}
+
 	client := http.Client{}
 	res, err := client.Do(req)
 	if err != nil {
