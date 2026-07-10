@@ -1,3 +1,4 @@
+#!/usr/bin/env saturn
 const res = net.http.get("https://itcorp.com");
 
 io.println(`Status: ${res.status}`);

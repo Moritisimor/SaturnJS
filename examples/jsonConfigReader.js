@@ -1,3 +1,4 @@
+#!/usr/bin/env saturn
 const config = fs.readJsonObject('config.json');
 io.println(`Port: ${config.port}, Host: ${config.host}`);
 io.println(`DB port: ${config.db_port}, DB host: ${config.db_host}`);

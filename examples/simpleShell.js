@@ -1,3 +1,4 @@
+#!/usr/bin/env saturn
 const prompt = 'simpleShell >> ';
 while (true) {
     io.println(os.cwd());

@@ -1,3 +1,4 @@
+#!/usr/bin/env saturn
 const args = os.getArgs();
 if (args.length < 2) {
     io.println('Usage: logAnalyzer.js <log file>');

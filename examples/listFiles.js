@@ -1,3 +1,4 @@
+#!/usr/bin/env saturn
 const args = os.getArgs();
 if (args.length < 2) {
     io.println(color.redify('usage: listFiles <directory path>'));
