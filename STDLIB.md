@@ -1,6 +1,8 @@
 # SaturnJS Standard Library 
 This Markdown document serves as documentation for the standard library.
 
+The standard library is always subject to changes, and although breaking changes probably won't happen, the API will be extended upon.
+
 ## io
 Collection of functions for Input and Output via stdin and stdout.
 
