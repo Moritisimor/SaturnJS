@@ -171,3 +171,12 @@ Exits the process with exit code.
 
 #### Signature
 `os.exit(code: int): undefined`
+
+## exec
+Collection of functions for spawning processes
+
+### execute
+Spawns a process, waiting for it to finish. Returns the process exit code.
+
+#### signature
+exec.execute(programName: string, programArgs: string array): integer
