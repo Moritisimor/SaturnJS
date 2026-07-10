@@ -8,6 +8,8 @@ Unlike most other JS runtimes, SaturnJS is intended to be used for scripts that 
 
 It is still in development, and although the API is not supposed to break, it will be extended upon.
 
+Stdlib documentation can be found [here](https://github.com/Moritisimor/SaturnJS/blob/main/STDLIB.md).
+
 ## Contributing
 Contributions are always more than welcome. 
 
