@@ -311,3 +311,18 @@ Note that the `headers` object must only have keys where the value is a string.
 - headers: string array array
 - getHeader: (key: string) => string
 - ip: string
+
+## rand
+A collection of functions for randomly generating numbers
+
+### randInt
+Inclusively generates a random integer between two numbers.
+
+#### Signature
+`rand.randInt(lower: int, upper: int): int`
+
+### randFloat
+Inclusively generates a random float between two numbers.
+
+#### Signature
+`rand.randFloat(lower: float, upper: float): float`

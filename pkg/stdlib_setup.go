@@ -9,6 +9,7 @@ import (
 	"github.com/Moritisimor/SaturnJS/iolib"
 	"github.com/Moritisimor/SaturnJS/netlib"
 	"github.com/Moritisimor/SaturnJS/oslib"
+	"github.com/Moritisimor/SaturnJS/randlib"
 	"github.com/dop251/goja"
 )
 
@@ -34,8 +35,11 @@ func StdlibSetup(js *goja.Runtime) error {
 	}
 
 	if err := execlib.RegisterFuncs(js); err != nil {
-		return fmt.Errorf("Error while registering 'exec'-related functions. %s\n", err.Error())
+		return fmt.Errorf("Error while registering 'exec'-related functions: %s\n", err.Error())
+	}
 
+	if err := randlib.RegisterFuncs(js); err != nil {
+		return fmt.Errorf("Error while registering 'randlib'-related functions: %s\n", err.Error())
 	}
 
 	return nil
