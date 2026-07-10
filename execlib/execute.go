@@ -5,7 +5,7 @@ import (
 	"os/exec"
 )
 
-func execute(program string, args []string) (int, error) {
+func Execute(program string, args []string) (int, error) {
 	cmd := exec.Command(program, args...)
 	cmd.Stdout = os.Stdout
 	cmd.Stdin = os.Stdin

@@ -2,6 +2,6 @@ package oslib
 
 import "os"
 
-func getUser() string {
+func GetUser() string {
 	return os.Getenv("USER")
 }

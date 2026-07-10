@@ -2,8 +2,8 @@ package fslib
 
 import "strings"
 
-func readFileLines(path string) ([]string, error) {
-	content, err := readFile(path)
+func ReadFileLines(path string) ([]string, error) {
+	content, err := ReadFile(path)
 	if err != nil {
 		return []string{}, err
 	}

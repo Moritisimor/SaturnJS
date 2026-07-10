@@ -8,11 +8,11 @@ import (
 
 func RegisterFuncs(js *goja.Runtime) error {
 	return js.Set("fs", map[string]any{
-		"readFile": readFile,
-		"readFileLines": readFileLines,
-		"readFileBytes": os.ReadFile,
-		"readDir": readDir,
-		"readJsonObject": readJsonObject,
-		"readJsonArray": readJsonArray,
+		"readFile":       ReadFile,
+		"readFileLines":  ReadFileLines,
+		"readFileBytes":  os.ReadFile,
+		"readDir":        ReadDir,
+		"readJsonObject": ReadJsonObject,
+		"readJsonArray":  ReadJsonArray,
 	})
 }

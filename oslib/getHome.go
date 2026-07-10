@@ -2,6 +2,6 @@ package oslib
 
 import "os"
 
-func getHome() (string, error) {
+func GetHome() (string, error) {
 	return os.UserHomeDir()
 }

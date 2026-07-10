@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func readJsonObject(path string) (map[string]any, error) {
+func ReadJsonObject(path string) (map[string]any, error) {
 	decodedJson := map[string]any{}
 	content, err := os.ReadFile(path)
 	if err != nil {
@@ -16,7 +16,7 @@ func readJsonObject(path string) (map[string]any, error) {
 	return decodedJson, err
 }
 
-func readJsonArray(path string) ([]any, error) {
+func ReadJsonArray(path string) ([]any, error) {
 	decodedJson := []any{}
 	content, err := os.ReadFile(path)
 	if err != nil {
