@@ -20,6 +20,8 @@ try {
     for (const [id, name, age] of people) {
         io.println(`\t- Id: ${id}, Name: ${name}, Age: ${age}`);
     }
+
+    fs.writeJson("./people.json", people);
 } catch (err) {
     io.println(`Error: ${err}`);
 } finally {

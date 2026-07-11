@@ -22,6 +22,9 @@ func RegisterFuncs(js *goja.Runtime) error {
 		"deleteFile": os.Remove,
 		"deleteDir":  os.RemoveAll,
 
+		"writeFile": Write,
+		"writeJson": WriteJson,
+
 		"move": os.Rename,
 		"copy": Copy,
 	})
