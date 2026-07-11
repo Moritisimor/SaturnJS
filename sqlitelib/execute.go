@@ -1,8 +1,6 @@
 package sqlitelib
 
-import "database/sql"
-
-func Execute(db *sql.DB) func(cmd string, params ...any) (map[string]any, error) {
+func Execute(db Queryer) func(cmd string, params ...any) (map[string]any, error) {
 	return func(cmd string, params ...any) (map[string]any, error) {
 		res, err := db.Exec(cmd, params...)
 		if err != nil {

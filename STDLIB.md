@@ -363,10 +363,10 @@ The `?`'s are placeholders for arguments, which are later given to the function 
 `sqlite.connect(path: string): object`
 
 ##### Object Methods
-###### execute: (cmd: string, params: variadic any): object
+###### execute: (cmd: string, params: variadic any) => object
 Executes a SQL statement, returning an object containing `insertRowId: int` and `rowsAffected: int`.
 
-###### querySingle: (cmd: string, params: variadic any): object array
+###### querySingle: (cmd: string, params: variadic any) => object array
 Executes a SQL statement, returning an array containing the rows.
 
 This SQL statement MUST return a single row, otherwise an exception will be thrown.
@@ -382,7 +382,7 @@ const johnDoe = db.querySingle("SELECT id, name, age FROM people WHERE name = ?"
 io.println(`Id: ${johnDoe[0]}, Name: ${johnDoe[1]}, Age: ${johnDoe[2]}`);
 ```
 
-###### query: (cmd: string, params: variadic any): object array array
+###### query: (cmd: string, params: variadic any) => object array array
 Executes a SQL statement, returning the records as an array of arrays.
 
 Example:
@@ -405,5 +405,38 @@ for (const [id, name, age] of people) {
 }
 ```
 
-###### close: (): undefined
+###### startTransaction: () => object
+Starts a SQL transaction, returning the transaction as an object.
+
+The transaction has the same methods as a regular database object, except that it also has:
+- Commit: () => undefined
+- Rollback: () => undefined
+
+It is also missing the `close` method, as `close` is for the database only.
+
+Example:
+```js
+const db = sqlite.connect(':memory:');
+const tx = db.startTransaction();
+try {
+    tx.execute("CREATE TABLE people (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)");
+    tx.execute(
+        "INSERT INTO people (name, age) VALUES (?, ?), (?, ?)",
+        "John Doe", 20,
+        "Jane Doe", 21
+    );
+
+    tx.commit();
+    for (const [name, age] of db.query("SELECT name, age FROM people")) {
+        io.println(`Name: ${name}, Age: ${age}`);
+    }
+} catch (err) {
+    io.println(`Error while running transaction: ${err}`);
+    tx.rollback();
+} finally {
+    db.close();
+}
+```
+
+###### close: () => undefined
 Closes the SQLite connection.

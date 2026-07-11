@@ -1,8 +1,9 @@
 #!/usr/bin/env saturn
 const db = sqlite.connect(":memory:");
 try {
-    db.execute("CREATE TABLE people (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)");
-    db.execute(`
+    const tx = db.startTransaction();
+    tx.execute("CREATE TABLE people (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)");
+    tx.execute(`
         INSERT INTO people (name, age) VALUES 
         ('John Doe', 21), 
         ('Jane Doe', 22), 

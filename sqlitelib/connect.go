@@ -13,6 +13,7 @@ func Connect(path string) (map[string]any, error) {
 	}
 
 	return map[string]any{
+		"startTransaction": StartTransaction(db),
 		"execute": Execute(db),
 		"querySingle": QuerySingle(db),
 		"query": Query(db),

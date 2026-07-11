@@ -1,8 +1,6 @@
 package sqlitelib
 
-import "database/sql"
-
-func Query(db *sql.DB) func(sqlText string, params... any) ([][]any, error) {
+func Query(db Queryer) func(sqlText string, params... any) ([][]any, error) {
 	return func(sqlText string, params ...any) ([][]any, error) {
 		rows, err := db.Query(sqlText, params...)
 		if err != nil {
