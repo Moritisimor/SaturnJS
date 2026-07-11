@@ -16,12 +16,14 @@ try {
 
     const people = db.query("SELECT id, name, age FROM people");
     io.println("People:");
+    const peopleArray = [];
     // JS Destructuring makes this pleasant to read and write
     for (const [id, name, age] of people) {
         io.println(`\t- Id: ${id}, Name: ${name}, Age: ${age}`);
+        peopleArray.push({"id": id, "name": name, "age": age})
     }
-
-    fs.writeJson("./people.json", people);
+    
+    fs.writeJson("./people.json", peopleArray);
 } catch (err) {
     io.println(`Error: ${err}`);
 } finally {
