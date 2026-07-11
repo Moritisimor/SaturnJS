@@ -326,3 +326,68 @@ Inclusively generates a random float between two numbers.
 
 #### Signature
 `rand.randFloat(lower: float, upper: float): float`
+
+## sqlite
+Functions for interacting with sqlite databases.
+
+### connect
+Connects to a sqlite database, creating a new one if it doesn't already exist.
+
+May throw for several reasons, like the user not having the necessary permissions.
+
+SQLite syntax for parameters applies here. A small example:
+```js
+const db = sqlite.connect(":memory");
+db.execute("INSERT INTO myTable (val1, val2) VALUES (?, ?), (?, ?)", 1, 2, 3, 4)
+```
+
+The `?`'s are placeholders for arguments, which are later given to the function as parameters.
+
+#### Signature
+`sqlite.connect(path: string): object`
+
+##### Object Methods
+###### execute: (cmd: string, params: variadic any): object
+Executes a SQL statement, returning an object containing `insertRowId: int` and `rowsAffected: int`.
+
+###### querySingle: (cmd: string, params: variadic any): object array
+Executes a SQL statement, returning an array containing the rows.
+
+This SQL statement MUST return a single row, otherwise an exception will be thrown.
+
+Example:
+```js
+const db = sqlite.connect(":memory:");
+db.execute("CREATE TABLE people (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)");
+db.execute("INSERT INTO people (name, age) VALUES ('John Doe', 21), ('Jane Doe', 22)");
+
+// Here, id would be the 0th element of the array, name the 1st and age the 2nd.
+const johnDoe = db.querySingle("SELECT id, name, age FROM people WHERE name = ?", "John Doe");
+io.println(`Id: ${johnDoe[0]}, Name: ${johnDoe[1]}, Age: ${johnDoe[2]}`);
+```
+
+###### query: (cmd: string, params: variadic any): object array array
+Executes a SQL statement, returning the records as an array of arrays.
+
+Example:
+```js
+const db = sqlite.connect(":memory:");
+db.execute("CREATE TABLE people (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)");
+db.execute(`
+    INSERT INTO people (name, age) VALUES 
+    ('John Doe', 21), 
+    ('Jane Doe', 22), 
+    ('Max Mustermann', 20),
+    ('Erika Mustermann', 23)
+`);
+
+const people = db.query("SELECT id, name, age FROM people");
+io.println("People:");
+// JS Destructuring makes this pleasant to read and write
+for (const [id, name, age] of people) {
+    io.println(`\t- Id: ${id}, Name: ${name}, Age: ${age}`);
+}
+```
+
+###### close: (): undefined
+Closes the SQLite connection.

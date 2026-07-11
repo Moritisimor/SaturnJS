@@ -10,6 +10,7 @@ import (
 	"github.com/Moritisimor/SaturnJS/netlib"
 	"github.com/Moritisimor/SaturnJS/oslib"
 	"github.com/Moritisimor/SaturnJS/randlib"
+	"github.com/Moritisimor/SaturnJS/sqlitelib"
 	"github.com/dop251/goja"
 )
 
@@ -40,6 +41,10 @@ func StdlibSetup(js *goja.Runtime) error {
 
 	if err := randlib.RegisterFuncs(js); err != nil {
 		return fmt.Errorf("Error while registering 'randlib'-related functions: %s\n", err.Error())
+	}
+
+	if err := sqlitelib.RegisterFuncs(js); err != nil {
+		return fmt.Errorf("Error while registering 'sqlite'-realted functions: %s\n", err.Error())
 	}
 
 	return nil
