@@ -136,6 +136,22 @@ Throws if `oldPath` does not exist, `newPath` is in a non-existant directory, or
 #### Signature
 `fs.copy(oldPath: string, newPath: string): undefined`
 
+### writeFile
+Writes string to a file.
+
+Throws if you are trying to write to a file that's in a non-existant directory or you don't have the necessary permissions.
+
+#### Signature
+`fs.writeFile(path: string, content: string)`
+
+### writeJson
+Writes JSON object or array to a file.
+
+Throws if you are trying to write to a file that's in a non-existant directory or you don't have the necessary permissions.
+
+#### Signature
+`fs.writeJson(path: string, content: object)`
+
 ## os
 Collection of functions for interacting with the Operating System.
 
