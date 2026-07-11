@@ -3,6 +3,7 @@ package pkg
 import (
 	"errors"
 	"fmt"
+	"io"
 	"strings"
 
 	"github.com/Moritisimor/EpsilonFetch/pkg/color"
@@ -27,6 +28,10 @@ func RunRepl(js *goja.Runtime) error {
 		if err != nil {
 			if errors.Is(err, readline.ErrInterrupt) {
 				continue
+			}
+
+			if errors.Is(err, io.EOF) {
+				break;
 			}
 
 			return fmt.Errorf("Error while reading line: %s\n", err.Error())
