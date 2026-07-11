@@ -11,6 +11,7 @@ try {
         ('Erika Mustermann', 23)
     `);
 
+    tx.commit();
     // Here, id would be the 0th element of the array, name the 1st and age the 2nd.
     const johnDoe = db.querySingle("SELECT id, name, age FROM people WHERE name = ?", "John Doe");
     io.println(`Id: ${johnDoe[0]}, Name: ${johnDoe[1]}, Age: ${johnDoe[2]}`);
