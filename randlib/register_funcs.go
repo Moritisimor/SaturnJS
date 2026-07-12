@@ -6,5 +6,6 @@ func RegisterFuncs(js *goja.Runtime) error {
 	return js.Set("rand", map[string]any{
 		"randInt":   RandInt,
 		"randFloat": RandFloat,
+		"choice": Choice,
 	})
 }

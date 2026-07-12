@@ -343,6 +343,14 @@ Inclusively generates a random float between two numbers.
 #### Signature
 `rand.randFloat(lower: float, upper: float): float`
 
+### choice
+Returns a random element from a list.
+
+If the list is empty, null is returned.
+
+#### Signature
+`rand.choice(list: object array): object`
+
 ## sqlite
 Functions for interacting with sqlite databases.
 
