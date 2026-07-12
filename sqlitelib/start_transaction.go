@@ -15,6 +15,7 @@ func StartTransaction(db *sql.DB) func() (map[string]any, error) {
 			"execute": Execute(trans),
 			"query": Query(trans),
 			"querySingle": QuerySingle(trans),
+			"queryScalar": QueryScalar(trans),
 		}, nil
 	}
 }

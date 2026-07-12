@@ -382,6 +382,21 @@ const johnDoe = db.querySingle("SELECT id, name, age FROM people WHERE name = ?"
 io.println(`Id: ${johnDoe[0]}, Name: ${johnDoe[1]}, Age: ${johnDoe[2]}`);
 ```
 
+###### querySclar: (cmd: string, params: variadic any) => any
+Executes a SQL statement, returning a single value, not wrapped in an object or array.
+
+This SQL statement must return a single row and a single column, otherwise an exception will be thrown.
+
+Example:
+```js
+const db = sqlite.connect(":memory:");
+db.execute("CREATE TABLE people (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)");
+db.execute("INSERT INTO people (name, age) VALUES ('John Doe', 21), ('Jane Doe', 22)");
+
+const johnDoeId = db.queryScalar("SELECT id FROM people WHERE name = ?", "John Doe");
+io.println(`John Doe's ID: ${johnDoeId}`);
+```
+
 ###### query: (cmd: string, params: variadic any) => object array array
 Executes a SQL statement, returning the records as an array of arrays.
 
