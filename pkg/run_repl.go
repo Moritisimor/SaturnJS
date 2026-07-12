@@ -31,7 +31,7 @@ func RunRepl(js *goja.Runtime) error {
 			}
 
 			if errors.Is(err, io.EOF) {
-				break;
+				break
 			}
 
 			return fmt.Errorf("Error while reading line: %s\n", err.Error())

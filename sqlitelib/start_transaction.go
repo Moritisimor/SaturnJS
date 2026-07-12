@@ -10,10 +10,10 @@ func StartTransaction(db *sql.DB) func() (map[string]any, error) {
 		}
 
 		return map[string]any{
-			"commit": trans.Commit,
-			"rollback": trans.Rollback,
-			"execute": Execute(trans),
-			"query": Query(trans),
+			"commit":      trans.Commit,
+			"rollback":    trans.Rollback,
+			"execute":     Execute(trans),
+			"query":       Query(trans),
 			"querySingle": QuerySingle(trans),
 			"queryScalar": QueryScalar(trans),
 		}, nil

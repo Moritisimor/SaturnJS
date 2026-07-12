@@ -26,7 +26,7 @@ func DateStringAmerican(sep string) string {
 	if sep == "" {
 		sep = "-"
 	}
-	
+
 	rn := time.Now()
 	year, m, day := rn.Date()
 	month := m.String()

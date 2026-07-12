@@ -14,10 +14,10 @@ func Connect(path string) (map[string]any, error) {
 
 	return map[string]any{
 		"startTransaction": StartTransaction(db),
-		"execute": Execute(db),
-		"querySingle": QuerySingle(db),
-		"queryScalar": QueryScalar(db),
-		"query": Query(db),
-		"close": db.Close,
+		"execute":          Execute(db),
+		"querySingle":      QuerySingle(db),
+		"queryScalar":      QueryScalar(db),
+		"query":            Query(db),
+		"close":            db.Close,
 	}, nil
 }

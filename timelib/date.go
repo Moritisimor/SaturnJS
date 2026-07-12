@@ -7,8 +7,8 @@ func Date() map[string]any {
 	year, month, day := rn.Date()
 
 	return map[string]any{
-		"year": year,
+		"year":  year,
 		"month": int(month),
-		"day": day,
+		"day":   day,
 	}
 }

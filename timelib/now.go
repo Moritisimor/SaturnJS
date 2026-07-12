@@ -8,6 +8,6 @@ func Now() map[string]any {
 	return map[string]any{
 		"second": rn.Second(),
 		"minute": rn.Minute(),
-		"hour": rn.Hour(),
+		"hour":   rn.Hour(),
 	}
 }

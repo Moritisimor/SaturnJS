@@ -5,5 +5,5 @@ import (
 )
 
 func RandInt(low, high int) int {
-	return rand.IntN(high - low + 1) + low
+	return rand.IntN(high-low+1) + low
 }

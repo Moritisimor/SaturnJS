@@ -18,8 +18,8 @@ func Execute(db Queryer) func(cmd string, params ...any) (map[string]any, error)
 		}
 
 		return map[string]any{
-			"insertRowId": id,
+			"insertRowId":  id,
 			"rowsAffected": rows,
 		}, nil
 	}
-} 
+}

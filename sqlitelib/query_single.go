@@ -2,8 +2,7 @@ package sqlitelib
 
 import "fmt"
 
-
-func QuerySingle(db Queryer) func(sqlText string, params... any) ([]any, error) {
+func QuerySingle(db Queryer) func(sqlText string, params ...any) ([]any, error) {
 	return func(sqlText string, params ...any) ([]any, error) {
 		rows, err := db.Query(sqlText, params...)
 		if err != nil {
