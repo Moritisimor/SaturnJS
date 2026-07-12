@@ -11,6 +11,7 @@ import (
 	"github.com/Moritisimor/SaturnJS/oslib"
 	"github.com/Moritisimor/SaturnJS/randlib"
 	"github.com/Moritisimor/SaturnJS/sqlitelib"
+	"github.com/Moritisimor/SaturnJS/timelib"
 	"github.com/dop251/goja"
 )
 
@@ -45,6 +46,10 @@ func StdlibSetup(js *goja.Runtime) error {
 
 	if err := sqlitelib.RegisterFuncs(js); err != nil {
 		return fmt.Errorf("Error while registering 'sqlite'-realted functions: %s\n", err.Error())
+	}
+
+	if err := timelib.RegisterFuncs(js); err != nil {
+		return fmt.Errorf("Error while registering 'time'-related functions: %s\n", err.Error())
 	}
 
 	return nil

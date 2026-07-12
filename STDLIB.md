@@ -440,3 +440,78 @@ try {
 
 ###### close: () => undefined
 Closes the SQLite connection.
+
+## time
+A collection of functions related to time and date
+
+### now
+Returns the current time as an object.
+
+#### Signature
+`time.now(): object`
+
+##### Object Fields
+- day: int
+- month: int
+- year: int
+
+### unixNow
+Returns the current time as UNIX seconds.
+
+#### Signature
+`time.unixNow(): int`
+
+### unixNowMillis
+Returns the current time as UNIX milliseconds.
+
+#### Signature
+`time.unixNowMillis(): int`
+
+### unixNowMicros
+Returns the current time as UNIX microseconds.
+
+#### Signature
+`time.unixNowMicros(): int`
+
+### date
+Returns the current date as an object.
+
+#### Signature
+`time.date(): object`
+
+##### Object Fields
+- year: int
+- month: int
+- day: int
+
+### dateString
+Returns the current date as a string.
+
+If no seperator is set, it will default to '-'.
+
+A date may look like this: `12-July-2026`.
+
+#### Signature
+`time.dateString(sep: string): string`
+
+### dateStringAmerican
+Returns the current date as a string (month first, then day).
+
+If no seperator is set, it will default to '-'.
+
+A date may look like this: `July-12-2026`.
+
+#### Signature
+`time.dateStringAmerican(sep: string): string`
+
+### sleepSecs
+Sleeps for a set amount of seconds.
+
+#### Signature
+`time.sleepSecs(duration: int): undefined`
+
+### sleepMillis
+Sleeps for a set amount of milliseconds.
+
+#### Signature
+`time.sleepMillis(duration: int): undefined`
