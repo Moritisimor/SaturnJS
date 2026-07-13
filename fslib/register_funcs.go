@@ -27,5 +27,7 @@ func RegisterFuncs(js *goja.Runtime) error {
 
 		"move": os.Rename,
 		"copy": Copy,
+
+		"pathSep": string(os.PathSeparator),
 	})
 }

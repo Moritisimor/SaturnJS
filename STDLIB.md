@@ -152,6 +152,11 @@ Throws if you are trying to write to a file that's in a non-existant directory o
 #### Signature
 `fs.writeJson(path: string, content: object)`
 
+### pathSep
+Path Seperator of the current OS as a string.
+
+This is not a function, it is a variable, thus, it does not need to be invoked.
+
 ## os
 Collection of functions for interacting with the Operating System.
 
